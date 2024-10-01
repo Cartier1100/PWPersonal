@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            padding-top: 56px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mi Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="projects">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-page="contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-5">
+        <!-- Home Section -->
+        <div id="home" class="page">
+            <h1>Sobre mí</h1>
+            <p>¡Hola! Soy un programador apasionado por el desarrollo web. Estudié en [instituto/universidad] y me encanta crear aplicaciones interactivas y funcionales.</p>
+            <p>Mis intereses incluyen el diseño UX/UI, desarrollo backend, y más.</p>
+        </div>
+
+        <!-- Projects Section -->
+        <div id="projects" class="page hidden">
+            <h1>Mis Proyectos</h1>
+            <div class="row" id="project-list">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Proyecto 1</h5>
+                            <p class="card-text">Descripción breve del proyecto.</p>
+                            <button class="btn btn-primary project-modal" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="Proyecto 1">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repite para más proyectos -->
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact" class="page hidden">
+            <h1>Contacto</h1>
+            <form id="contactForm">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel">Título del proyecto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Más información del proyecto.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>Desarrollado por [Tu Nombre]</p>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            // Función para navegar entre páginas
+            $('a[data-page]').click(function() {
+                var page = $(this).data('page');
+                $('.page').addClass('hidden');
+                $('#' + page).removeClass('hidden');
+            });
+
+            // Validar el formulario de contacto
+            $('#contactForm').submit(function(e) {
+                e.preventDefault();
+                var email = $('#email').val();
+                if(validateEmail(email)) {
+                    alert("Gracias! Tu mensaje ha sido enviado.");
+                } else {
+                    alert("Por favor, introduce un correo válido.");
+                }
+            });
+
+            // Validar correo electrónico
+            function validateEmail(email) {
+                var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+            // Abrir modal con información del proyecto
+            $('.project-modal').click(function() {
+                var project = $(this).data('project');
+                $('#projectModalLabel').text(project);
+                // Cambia la información del proyecto aquí
+            });
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
