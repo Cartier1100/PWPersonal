@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,8 @@
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        body, html {
+        body,
+        html {
             height: 100%;
             margin: 0;
             scroll-behavior: smooth;
@@ -24,30 +26,225 @@
             text-align: center;
         }
 
+        /* Estilos exclusivos para la sección "Sobre mí" */
         #home {
-            background: linear-gradient(135deg, #f1f1f1, #e0e0e0);
+            background-color: #1a1a1a;
+            /* Color oscuro de fondo */
+            color: #f0f0f0;
+            /* Texto claro para contraste */
+            padding: 60px 0;
         }
 
-        #projects {
-            background: linear-gradient(135deg, #e0e0e0, #d1d1d1);
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        #contact {
-            background: linear-gradient(135deg, #d1d1d1, #c2c2c2);
+        .about-container h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            /* Color dorado para destacar el título */
         }
 
-        .navbar-nav .nav-item .nav-link {
+        .about-container p.lead {
             font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #f0f0f0;
+        }
+
+        .about-container ul.about-interests {
+            list-style: none;
+            padding: 0;
+        }
+
+        .about-container ul.about-interests li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: #cccccc;
+            /* Color gris claro para el texto */
+        }
+
+        .about-container ul.about-interests li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ffcc00;
+            /* Color dorado para los bullets */
+            font-size: 1.5rem;
+        }
+
+        .about-container .about-img {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(255, 204, 0, 0.5);
+            /* Sombra con un toque dorado */
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .about-container .about-img:hover {
+            transform: scale(1.1) translateY(-10px);
+            /* Aumenta la escala y desplaza ligeramente hacia arriba */
+            box-shadow: 0 8px 30px rgba(255, 204, 0, 0.7);
+            /* Intensifica la sombra */
+        }
+
+        @media (max-width: 768px) {
+            .about-container h1 {
+                font-size: 2rem;
+            }
+
+            .about-container p.lead {
+                font-size: 1rem;
+            }
+
+            .about-container .about-img {
+                margin-top: 20px;
+            }
+        }
+
+
+
+
+        /* Estilos exclusivos para la sección de proyectos */
+        #projects {
+            padding: 50px 0;
+            background-color: #e9ecef;
+            /* Color de fondo más suave que el anterior */
+        }
+
+        #projects h1 {
+            margin-bottom: 40px;
+            text-align: center;
+            color: #343a40;
+            /* Color de texto oscuro para contraste */
+            font-size: 2.5rem;
+            /* Tamaño de fuente más grande para destacar */
+        }
+
+        .project-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+            border-radius: 15px;
+            /* Bordes redondeados para un aspecto más moderno */
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+            /* Sombra más intensa al hacer hover */
+        }
+
+        .project-card .card-body {
+            text-align: center;
+            padding: 20px;
+            /* Espaciado interior para mejor presentación */
+        }
+
+        .modal-content {
+            padding: 20px;
+            background-color: #fff;
+            /* Fondo blanco para el contenido del modal */
+            border-radius: 10px;
+            /* Bordes redondeados para el modal */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            /* Sombra suave para el modal */
         }
 
         .card {
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            border-radius: 10px;
+            /* Bordes redondeados para las cards */
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.25);
+            /* Efecto de sombra más intenso en hover */
+        }
+
+        @media (max-width: 768px) {
+            #projects h1 {
+                font-size: 2rem;
+                /* Tamaño de fuente ajustado para pantallas más pequeñas */
+            }
+
+            .project-card {
+                margin-bottom: 20px;
+                /* Espacio entre las cards en pantallas pequeñas */
+            }
+        }
+
+        /*CONTACTO*/
+        /* Estilos para la sección de contacto */
+        #contact-section {
+            padding: 50px 0;
+            background-color: #343a40;
+            /* Color de fondo gris oscuro */
+            color: #ffffff;
+            /* Color de texto blanco para contraste */
+        }
+
+        #contact-section h1 {
+            margin-bottom: 40px;
+            text-align: center;
+            font-size: 2.5rem;
+            /* Tamaño de fuente más grande para destacar */
+        }
+
+        #contact-section .label-text {
+            font-size: 1.1rem;
+            /* Tamaño de fuente para la etiqueta */
+        }
+
+        #contact-section .input-field {
+            border-radius: 5px;
+            /* Bordes redondeados para los campos del formulario */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            /* Sombra suave para los campos */
+        }
+
+        #contact-section .submit-button {
+            border-radius: 5px;
+            /* Bordes redondeados para el botón */
+            transition: background-color 0.3s ease;
+            /* Transición suave para el botón */
+        }
+
+        #contact-section .submit-button:hover {
+            background-color: #495057;
+            /* Color de fondo más oscuro al pasar el ratón */
+        }
+
+        /* Estilo para el modal de confirmación */
+        .modal-content-custom {
+            padding: 20px;
+            background-color: #ffffff;
+            /* Fondo blanco para el contenido del modal */
+            border-radius: 10px;
+            /* Bordes redondeados para el modal */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            /* Sombra suave para el modal */
+        }
+
+        .modal-header-custom {
+            border-bottom: none;
+            /* Sin borde inferior en el encabezado del modal */
+        }
+
+        .modal-body-custom {
+            text-align: center;
+            /* Centrar el texto en el modal */
+        }
+
+        @media (max-width: 768px) {
+            #contact-section h1 {
+                font-size: 2rem;
+                /* Tamaño de fuente ajustado para pantallas más pequeñas */
+            }
         }
 
         /* Footer styling */
@@ -57,12 +254,14 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Mi Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -81,43 +280,169 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
+    <!-- INICIO -->
     <div id="home" class="section">
-        <div>
-            <h1 class="display-4">Sobre mí</h1>
-            <p class="lead">¡Hola! Soy un programador apasionado por el desarrollo web.</p>
-            <p>Mis intereses incluyen el diseño UX/UI, desarrollo backend, y más.</p>
-        </div>
-    </div>
-
-    <div id="projects" class="section">
-        <h1 class="display-4">Mis Proyectos</h1>
-        <div class="container">
-            <div class="row" id="project-list">
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Proyecto 1</h5>
-                            <p class="card-text">Descripción breve del proyecto.</p>
-                            <button class="btn btn-primary project-modal" data-bs-toggle="modal" data-bs-target="#projectModal" data-project="Proyecto 1">Ver más</button>
-                        </div>
-                    </div>
+        <div class="container about-container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4">¡Hola, soy [Tu Nombre]!</h1>
+                    <p class="lead">Soy un desarrollador web apasionado, con habilidades en diseño UX/UI, desarrollo
+                        backend y mucho más. Mi objetivo es crear experiencias digitales impactantes y funcionales.</p>
+                    <p>Me gradué en [instituto/universidad], donde adquirí un fuerte conocimiento en programación y
+                        tecnologías web. Mis intereses incluyen:</p>
+                    <ul class="about-interests">
+                        <li>Desarrollo Full Stack</li>
+                        <li>Diseño UX/UI</li>
+                        <li>Optimización de rendimiento web</li>
+                        <li>Tecnologías emergentes</li>
+                    </ul>
+                    <p>Estoy siempre en busca de nuevos retos que me permitan mejorar mis habilidades y aportar valor a
+                        los proyectos en los que participo.</p>
                 </div>
-                <!-- Puedes agregar más proyectos aquí -->
+                <div class="col-md-6">
+                    <img src="./Screenshot_1.png" class="img-fluid about-img" alt="Yo">
+                </div>
             </div>
         </div>
     </div>
 
-    <div id="contact" class="section">
+
+    <!-- PROYECTOS -->
+    <div id="projects" class="section">
+        <h1 class="display-4">Mis Proyectos</h1>
+        <div class="container">
+            <div class="row" id="project-list">
+                <!-- Proyecto 1 -->
+                <div class="col-md-4">
+                    <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                        <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Proyecto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Proyecto 1</h5>
+                            <p class="card-text">Descripción breve del Proyecto 1.</p>
+                            <button class="btn btn-primary project-modal" data-bs-toggle="modal"
+                                data-bs-target="#projectModal1" data-project="Proyecto 1">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="col-md-4">
+                    <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                        <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Proyecto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Proyecto 2</h5>
+                            <p class="card-text">Descripción breve del Proyecto 2.</p>
+                            <button class="btn btn-primary project-modal" data-bs-toggle="modal"
+                                data-bs-target="#projectModal2" data-project="Proyecto 2">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 -->
+                <div class="col-md-4">
+                    <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                        <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Proyecto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Proyecto 3</h5>
+                            <p class="card-text">Descripción breve del Proyecto 3.</p>
+                            <button class="btn btn-primary project-modal" data-bs-toggle="modal"
+                                data-bs-target="#projectModal3" data-project="Proyecto 3">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Proyecto 1 -->
+        <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModal1Label"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModal1Label">Detalles del Proyecto 1</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Aquí se puede añadir una descripción detallada del Proyecto 1. Explica las funcionalidades,
+                            las tecnologías usadas y cualquier detalle relevante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Proyecto 2 -->
+        <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModal2Label"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModal2Label">Detalles del Proyecto 2</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Aquí se puede añadir una descripción detallada del Proyecto 2. Explica las funcionalidades,
+                            las tecnologías usadas y cualquier detalle relevante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Proyecto 3 -->
+        <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModal3Label"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="projectModal3Label">Detalles del Proyecto 3</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Aquí se puede añadir una descripción detallada del Proyecto 3. Explica las funcionalidades,
+                            las tecnologías usadas y cualquier detalle relevante.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="contact-section" class="section">
         <h1 class="display-4">Contacto</h1>
         <div class="container">
             <form id="contactForm">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="email" required>
+                <div class="mb-4">
+                    <label for="email" class="label-text">Correo Electrónico</label>
+                    <input type="email" class="form-control input-field" id="email" placeholder="tucorreo@ejemplo.com"
+                        required>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <div class="mb-4">
+                    <label for="message" class="label-text">Mensaje</label>
+                    <textarea class="form-control input-field" id="message" rows="4"
+                        placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary submit-button">Enviar</button>
             </form>
+        </div>
+    </div>
+
+
+
+    <!-- Modal de Confirmación -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">¡Gracias!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¡Tu mensaje ha sido enviado correctamente!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -144,9 +469,9 @@
     </footer>
 
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             // Función para navegar entre secciones
-            $('a[data-page]').click(function(e) {
+            $('a[data-page]').click(function (e) {
                 e.preventDefault();
                 var page = $(this).data('page');
                 $('html, body').animate({
@@ -155,11 +480,22 @@
             });
 
             // Validar el formulario de contacto
-            $('#contactForm').submit(function(e) {
+            $('#contactForm').submit(function (e) {
                 e.preventDefault();
                 var email = $('#email').val();
-                if(validateEmail(email)) {
-                    alert("Gracias! Tu mensaje ha sido enviado.");
+                if (validateEmail(email)) {
+                    // Si el correo es válido, muestra el modal
+                    const modalBody = `<div class="modal-header">
+                                           <h5 class="modal-title">¡Gracias!</h5>
+                                           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                       </div>
+                                       <div class="modal-body">
+                                           <p>¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.</p>
+                                       </div>`;
+                    const modal = new bootstrap.Modal(document.createElement('div'));
+                    modal._element.innerHTML = modalBody;
+                    document.body.appendChild(modal._element);
+                    modal.show();
                 } else {
                     alert("Por favor, introduce un correo válido.");
                 }
@@ -172,7 +508,7 @@
             }
 
             // Abrir modal con información del proyecto
-            $('.project-modal').click(function() {
+            $('.project-modal').click(function () {
                 var project = $(this).data('project');
                 $('#projectModalLabel').text(project);
             });
@@ -181,5 +517,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
