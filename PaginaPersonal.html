@@ -4,14 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
-        body {
-            padding-top: 56px;
+        body, html {
+            height: 100%;
+            margin: 0;
+            scroll-behavior: smooth;
         }
-        .hidden {
-            display: none;
+
+        .section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #home {
+            background: linear-gradient(135deg, #f1f1f1, #e0e0e0);
+        }
+
+        #projects {
+            background: linear-gradient(135deg, #e0e0e0, #d1d1d1);
+        }
+
+        #contact {
+            background: linear-gradient(135deg, #d1d1d1, #c2c2c2);
+        }
+
+        .navbar-nav .nav-item .nav-link {
+            font-size: 1.2rem;
+        }
+
+        .card {
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #343a40;
+            color: white;
         }
     </style>
 </head>
@@ -40,17 +82,17 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="container mt-5">
-        <!-- Home Section -->
-        <div id="home" class="page">
-            <h1>Sobre mí</h1>
-            <p>¡Hola! Soy un programador apasionado por el desarrollo web. Estudié en [instituto/universidad] y me encanta crear aplicaciones interactivas y funcionales.</p>
+    <div id="home" class="section">
+        <div>
+            <h1 class="display-4">Sobre mí</h1>
+            <p class="lead">¡Hola! Soy un programador apasionado por el desarrollo web.</p>
             <p>Mis intereses incluyen el diseño UX/UI, desarrollo backend, y más.</p>
         </div>
+    </div>
 
-        <!-- Projects Section -->
-        <div id="projects" class="page hidden">
-            <h1>Mis Proyectos</h1>
+    <div id="projects" class="section">
+        <h1 class="display-4">Mis Proyectos</h1>
+        <div class="container">
             <div class="row" id="project-list">
                 <div class="col-md-4">
                     <div class="card">
@@ -61,13 +103,14 @@
                         </div>
                     </div>
                 </div>
-                <!-- Repite para más proyectos -->
+                <!-- Puedes agregar más proyectos aquí -->
             </div>
         </div>
+    </div>
 
-        <!-- Contact Section -->
-        <div id="contact" class="page hidden">
-            <h1>Contacto</h1>
+    <div id="contact" class="section">
+        <h1 class="display-4">Contacto</h1>
+        <div class="container">
             <form id="contactForm">
                 <div class="mb-3">
                     <label for="email" class="form-label">Correo Electrónico</label>
@@ -94,17 +137,21 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>Desarrollado por [Tu Nombre]</p>
+    <footer class="py-3 text-center">
+        <div class="container">
+            <p>Desarrollado por [Tu Nombre] ©2024</p>
+        </div>
     </footer>
 
     <script>
         $(document).ready(function(){
-            // Función para navegar entre páginas
-            $('a[data-page]').click(function() {
+            // Función para navegar entre secciones
+            $('a[data-page]').click(function(e) {
+                e.preventDefault();
                 var page = $(this).data('page');
-                $('.page').addClass('hidden');
-                $('#' + page).removeClass('hidden');
+                $('html, body').animate({
+                    scrollTop: $('#' + page).offset().top
+                }, 800);
             });
 
             // Validar el formulario de contacto
@@ -128,11 +175,11 @@
             $('.project-modal').click(function() {
                 var project = $(this).data('project');
                 $('#projectModalLabel').text(project);
-                // Cambia la información del proyecto aquí
             });
         });
     </script>
 
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
