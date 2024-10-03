@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- AOS Library -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Mi Portfolio</a>
@@ -35,14 +35,16 @@
         </div>
     </nav>
 
-    <!-- INICIO -->
-    <div id="home" class="section" data-aos="fade-up">
-        <div class="container about-container">
+
+    <div id="home" class="section">
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <h1 class="display-4"><span class="element"></span></h1>
+                    <h1 class="display-4">
+                        <span class="element"></span>
+                    </h1>
                     <p class="lead">Soy un desarrollador web apasionado, con habilidades en diseño UX/UI, desarrollo backend y mucho más.</p>
-                    <ul class="about-interests">
+                    <ul>
                         <li>Bases de Datos</li>
                         <li>Sistemas Operativos</li>
                         <li>Creación de webs</li>
@@ -50,20 +52,20 @@
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <img src="./Screenshot_1.png" class="img-fluid about-img" alt="Yo">
+                    <img src="./Screenshot_1.png" class="img-fluid" alt="Yo">
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- PROYECTOS -->
-    <div id="projects" class="section" data-aos="fade-up">
+
+    <div id="projects" class="section">
         <h1 class="display-4">Mis Proyectos</h1>
         <div class="container">
-            <div class="row" id="project-list">
+            <div class="row">
                 <div class="col-md-4">
-                    <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal1">
-                        <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Proyecto 1">
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal1">
+                        <img src="./default.jpg" class="card-img-top" alt="Proyecto 1">
                         <div class="card-body">
                             <h5 class="card-title">Iluminación Educativa</h5>
                             <p class="card-text">Este proyecto era un producto para ayudar a personas con dificultades en clase</p>
@@ -71,8 +73,8 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal2">
-                        <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Proyecto 2">
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal2">
+                        <img src="./destacado_home_desarrollo.jpg" class="card-img-top" alt="Proyecto 2">
                         <div class="card-body">
                             <h5 class="card-title">SysAdmin Helper</h5>
                             <p class="card-text">Esto fue un script que ayudaba al administrador de un sistema</p>
@@ -80,11 +82,11 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal3">
-                        <img src="https://via.placeholder.com/350x150" class="card-img-top" alt="Proyecto 3">
+                    <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal3">
+                        <img src="./LOGO-CENTRO-INTEGRADO-CUATROVIENTOS-300x115.png" class="card-img-top" alt="Proyecto 3">
                         <div class="card-body">
                             <h5 class="card-title">Cuatrovientos</h5>
-                            <p class="card-text">Compre el terreno de un fabrica de 1950 para crear una cooperativa de profesores y enseñar a alumnos para crear profesionales.</p>
+                            <p class="card-text">Cooperativa para enseñar a alumnos y crear profesionales</p>
                         </div>
                     </div>
                 </div>
@@ -92,25 +94,25 @@
         </div>
     </div>
 
-    <!-- CONTACTO -->
-    <div id="contact" class="section" data-aos="fade-up">
+
+    <div id="contact" class="section">
         <h1 class="display-4">Contacto</h1>
         <div class="container">
             <form id="contactForm">
                 <div class="mb-4">
-                    <label for="email" class="label-text">Correo Electrónico</label>
-                    <input type="email" class="form-control input-field" id="email" placeholder="tucorreo@ejemplo.com" required>
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" placeholder="tucorreo@ejemplo.com" required>
                 </div>
                 <div class="mb-4">
-                    <label for="message" class="label-text">Mensaje</label>
-                    <textarea class="form-control input-field" id="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    <label for="message" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary submit-button">Enviar</button>
+                <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
     </div>
 
-    <!-- Modal de Confirmación -->
+
     <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -128,30 +130,23 @@
         </div>
     </div>
 
-    <!-- Footer -->
+
     <footer class="py-3 text-center">
         <div class="container">
             <p>Desarrollado por Jesús Macías ©2024</p>
         </div>
     </footer>
 
-    <!-- jQuery y Bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- AOS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
-    <!-- Typed.js -->
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-    <!-- Isotope Library -->
-    <script src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
-
-    <!-- Script jQuery -->
     <script>
         $(document).ready(function () {
-            // Navegación
+            var typed = new Typed(".element", {
+                strings: ["¡Hola, soy Jesús Macías!", "C++ Developer", "System Administrator"],
+                typeSpeed: 50,
+                backSpeed: 50,
+                loop: true
+            });
+
             $('a[data-page]').on('click', function (e) {
                 e.preventDefault();
                 var section = $(this).data('page');
@@ -160,39 +155,10 @@
                 }, 800);
             });
 
-            // Enviar formulario y mostrar modal de confirmación
             $('#contactForm').on('submit', function (e) {
                 e.preventDefault();
-                var email = $('#email').val();
-                var message = $('#message').val();
-
-                if (validateEmail(email) && message.length > 0) {
-                    $('#confirmationModal').modal('show');
-                    $(this)[0].reset();
-                }
-            });
-
-            // Validación del email
-            function validateEmail(email) {
-                var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return regex.test(email);
-            }
-
-            // Inicializar AOS
-            AOS.init();
-
-            // Inicializar Typed.js
-            var typed = new Typed(".element", {
-                strings: ["¡Hola, soy Jesús Macías!", "C++ Developer", "System Administrator"],
-                typeSpeed: 50,
-                backSpeed: 50,
-                loop: true
-            });
-
-            // Inicializar Isotope para los proyectos
-            var $grid = $('#project-list').isotope({
-                itemSelector: '.col-md-4',
-                layoutMode: 'fitRows'
+                $('#confirmationModal').modal('show');
+                $(this)[0].reset();
             });
         });
     </script>
