@@ -40,21 +40,27 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $('#project1').mouseenter(function () {
-        $('#projectModal1').modal('show');
-    }).mouseleave(function () {
-        $('#projectModal1').modal('hide');
+    // Inicialización de Typed.js
+    var options = {
+        strings: ["Desarrollador Web", "Entusiasta de la Programación", "Creador de Soluciones"],
+        typeSpeed: 40,
+        backSpeed: 50,
+        loop: true,
+    };
+    var typed = new Typed(".element", options);
+
+    // Filtrado de proyectos
+    $("#search").on("keyup", function () {
+        var value = $(this).val().toLowerCase();
+        $("#project-list .project-card").filter(function () {
+            $(this).toggle($(this).data("title").toLowerCase().indexOf(value) > -1);
+        });
     });
 
-    $('#project2').mouseenter(function () {
-        $('#projectModal2').modal('show');
-    }).mouseleave(function () {
-        $('#projectModal2').modal('hide');
-    });
-
-    $('#project3').mouseenter(function () {
-        $('#projectModal3').modal('show');
-    }).mouseleave(function () {
-        $('#projectModal3').modal('hide');
+    // Manejo del envío del formulario de contacto
+    $("#contactForm").on("submit", function (event) {
+        event.preventDefault(); // Evitar el envío normal del formulario
+        $("#confirmationModal").modal("show"); // Mostrar modal de confirmación
+        $(this).trigger("reset"); // Reiniciar el formulario
     });
 });

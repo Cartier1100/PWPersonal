@@ -74,7 +74,7 @@
             </div>
             <div class="row" id="project-list">
                 <div class="col-md-4 project-card" data-title="Iluminación Educativa">
-                    <div class="card" id="project1">
+                    <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal1">
                         <img src="./imagenes/default.jpg" class="card-img-top" alt="Proyecto 1">
                         <div class="card-body">
                             <h5 class="card-title">Iluminación Educativa</h5>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 project-card" data-title="SysAdmin Helper">
-                    <div class="card" id="project2">
+                    <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal2">
                         <img src="./imagenes/destacado_home_desarrollo.jpg" class="card-img-top" alt="Proyecto 2">
                         <div class="card-body">
                             <h5 class="card-title">SysAdmin Helper</h5>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 project-card" data-title="Cuatrovientos">
-                    <div class="card" id="project3">
+                    <div class="card project-card" data-bs-toggle="modal" data-bs-target="#projectModal3">
                         <img src="./imagenes/LOGO-CENTRO-INTEGRADO-CUATROVIENTOS-300x115.png" class="card-img-top"
                             alt="Proyecto 3">
                         <div class="card-body">
@@ -101,6 +101,58 @@
                             <p class="card-text">Cooperativa para enseñar a alumnos y crear profesionales</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODALES -->
+    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel1">Iluminación Educativa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Este proyecto era un producto para ayudar a personas con dificultades en clase.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel2">SysAdmin Helper</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Esto fue un script que ayudaba al administrador de un sistema.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="projectModalLabel3">Cuatrovientos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Cooperativa para enseñar a alumnos y crear profesionales.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
@@ -135,7 +187,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ¡Tu mensaje ha sido enviado correctamente!
+                    Tu mensaje ha sido enviado correctamente.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -144,55 +196,12 @@
         </div>
     </div>
 
-    <!-- Modales-->
-    <div class="modal fade" id="projectModal1" tabindex="-1" aria-labelledby="projectModalLabel1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModalLabel1">Iluminación Educativa</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Este proyecto era un producto para ayudar a personas con dificultades en clase. Se basaba en una luz inteligente y adaptable.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="projectModal2" tabindex="-1" aria-labelledby="projectModalLabel2" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModalLabel2">SysAdmin Helper</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Este script automatiza tareas de administración de sistemas, ayudando a los administradores a gestionar servidores de forma eficiente.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="projectModal3" tabindex="-1" aria-labelledby="projectModalLabel3" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="projectModalLabel3">Cuatrovientos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Este proyecto consistía en una cooperativa que facilitaba el aprendizaje y fomentaba la profesionalización de los alumnos.
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <footer class="py-3 text-center">
-        <p>&copy; 2024 Mi Portfolio. Todos los derechos reservados.</p>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        &copy; 2024 Mi Portfolio. Todos los derechos reservados.
     </footer>
 
-    <script src="./javascript/javascript.js"></script> 
-    
+    <script src="./javascript/javascript.js"></script>
 </body>
 
 </html>
