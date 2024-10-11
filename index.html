@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <style>
+        #home {
+            padding-top: 100px;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navbar -->
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Mi Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -42,8 +49,10 @@
                     <h1 class="display-4">
                         <span class="element"></span>
                     </h1>
-                    <p class="lead">Soy un desarrollador web apasionado, con habilidades en diseño UX/UI, desarrollo backend y mucho más.</p>
-                    <p>He estudiado en [instituto/universidad] y me apasiona el desarrollo de soluciones tecnológicas creativas.</p>
+                    <p class="lead">Soy un desarrollador web apasionado, con habilidades en diseño UX/UI, desarrollo
+                        backend y mucho más.</p>
+                    <p>He estudiado en [instituto/universidad] y me apasiona el desarrollo de soluciones tecnológicas
+                        creativas.</p>
                     <p>Mis intereses incluyen:</p>
                     <ul>
                         <li>Bases de Datos</li>
@@ -72,7 +81,8 @@
                         <img src="./default.jpg" class="card-img-top" alt="Proyecto 1">
                         <div class="card-body">
                             <h5 class="card-title">Iluminación Educativa</h5>
-                            <p class="card-text">Este proyecto era un producto para ayudar a personas con dificultades en clase</p>
+                            <p class="card-text">Este proyecto era un producto para ayudar a personas con dificultades
+                                en clase</p>
                         </div>
                     </div>
                 </div>
@@ -87,7 +97,8 @@
                 </div>
                 <div class="col-md-4 project-card" data-title="Cuatrovientos">
                     <div class="card" data-bs-toggle="modal" data-bs-target="#projectModal3">
-                        <img src="./LOGO-CENTRO-INTEGRADO-CUATROVIENTOS-300x115.png" class="card-img-top" alt="Proyecto 3">
+                        <img src="./LOGO-CENTRO-INTEGRADO-CUATROVIENTOS-300x115.png" class="card-img-top"
+                            alt="Proyecto 3">
                         <div class="card-body">
                             <h5 class="card-title">Cuatrovientos</h5>
                             <p class="card-text">Cooperativa para enseñar a alumnos y crear profesionales</p>
@@ -109,15 +120,17 @@
                 </div>
                 <div class="mb-4">
                     <label for="message" class="form-label">Mensaje</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu mensaje aquí..."
+                        required></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
         </div>
     </div>
 
-    <!-- Modal de Confirmación -->
-    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <!-- Confirmación -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -141,7 +154,7 @@
         </div>
     </footer>
 
-    <!-- Typed.js Integration & Search -->
+    <!-- Typed.js -->
     <script>
         $(document).ready(function () {
             var typed = new Typed(".element", {
@@ -151,7 +164,7 @@
                 loop: true
             });
 
-            // Navegación SPA
+            // SPA
             $('a[data-page]').on('click', function (e) {
                 e.preventDefault();
                 var section = $(this).data('page');
@@ -160,7 +173,7 @@
                 }, 800);
             });
 
-            // Validación de formulario y modal de confirmación
+            // formulario y confirmación
             $('#contactForm').on('submit', function (e) {
                 e.preventDefault();
                 var email = $('#email').val();
@@ -170,7 +183,7 @@
                 }
             });
 
-            // Búsqueda de proyectos
+            // buscar proyectos
             $('#search').on('keyup', function () {
                 var searchTerm = $(this).val().toLowerCase();
                 $('#project-list .project-card').each(function () {
@@ -185,4 +198,5 @@
         });
     </script>
 </body>
+
 </html>
