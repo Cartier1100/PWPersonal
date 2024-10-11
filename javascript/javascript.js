@@ -38,3 +38,24 @@ $(document).ready(function () {
         });
     });
 });
+
+$(document).ready(function () {
+    // Mostrar modal al pasar el ratón por encima
+    $('#project1').mouseenter(function () {
+        $('#projectModal1').modal('show');
+    }).mouseleave(function () {
+        $('#projectModal1').modal('hide');
+    });
+
+    $('#project2').mouseenter(function () {
+        $('#projectModal2').modal('show');
+    }).mouseleave(function () {
+        $('#projectModal2').modal('hide');
+    });
+
+    $('#project3').mouseenter(function () {
+        $('#projectModal3').modal('show');
+    }).mouseleave(function () {
+        $('#projectModal3').modal('hide');
+    });
+});
