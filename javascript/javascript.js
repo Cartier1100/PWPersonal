@@ -40,7 +40,6 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    // Mostrar modal al pasar el ratón por encima
     $('#project1').mouseenter(function () {
         $('#projectModal1').modal('show');
     }).mouseleave(function () {
